@@ -89,3 +89,13 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+
+// find next prime number
+int
+sys_find_next_prime_num(void)
+{
+  int a = myproc()->tf->ebx; //register after eax
+  cprintf("in kernel systemcall sys_find_next_prime_num() called for number %d\n", a);
+  return find_next_prime_num(a);
+}

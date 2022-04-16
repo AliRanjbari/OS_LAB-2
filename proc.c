@@ -532,3 +532,21 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+// next prime number
+int 
+find_next_prime_num(int n)    
+{    
+  for(int i=n+1;i>0;i++)
+  {
+    int count=0;
+    for(int j=1;j<=i;j++)
+    {
+      if(i%j==0)
+      count++;
+    }
+    if(count==2)
+      return i;
+  }
+  return 0;
+}
