@@ -102,7 +102,11 @@ sys_find_next_prime_num(void)
 
 // get parent proc id
 int
-sys_get_call_count(int sys_call_num)
+sys_get_call_count(void)
 {
+
+  int sys_call_num;
+  if(argint(0, &sys_call_num) < 0)
+    return -1;
   return get_call_count(sys_call_num);
 }

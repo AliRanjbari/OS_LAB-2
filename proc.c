@@ -559,6 +559,5 @@ find_next_prime_num(int n)
 int 
 get_call_count(int sys_call_num)
 {
-  struct proc *curproc = myproc();
-  return curproc->sys_call_count[sys_call_num];
+  return myproc()->sys_call_count[sys_call_num];
 }

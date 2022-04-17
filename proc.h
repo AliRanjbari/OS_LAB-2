@@ -53,7 +53,6 @@ struct proc {
 
 
   int sys_call_count[25];     // count system calls
-
 };
 
 // Process memory is laid out contiguously, low addresses first:
