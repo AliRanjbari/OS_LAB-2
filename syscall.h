@@ -23,3 +23,4 @@
 #define SYS_find_next_prime_num 22
 #define SYS_get_call_count 23
 #define SYS_get_most_caller 24
+#define SYS_wait_for_process 25

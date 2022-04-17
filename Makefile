@@ -185,6 +185,7 @@ UPROGS=\
 	_find_next_prime_num\
 	_get_call_count\
 	_get_most_caller\
+	_wait_for_process\
 
 
 
@@ -256,7 +257,7 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c sort_string.c zombie.c\
-	find_next_prime_num.c get_call_count.c get_most_caller.c\
+	find_next_prime_num.c get_call_count.c get_most_caller.c wait_for_process.c\
 	printf.c umalloc.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\

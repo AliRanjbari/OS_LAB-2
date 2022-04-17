@@ -581,3 +581,21 @@ get_most_caller(int sys_call_num)
 
   return caller_id;
 }
+
+
+// wait for a process to finish
+void 
+wait_for_process(int pid)
+{
+  struct proc *p;
+
+  int pid_exist = 1;
+  while(pid_exist) {
+    pid_exist = 0;
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+      if(p->pid == pid){
+        pid_exist = 1;
+        break;
+      }
+  }
+}

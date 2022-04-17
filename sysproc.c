@@ -121,3 +121,15 @@ sys_get_most_caller(void)
     return -1;
   return get_most_caller(sys_call_num);
 }
+
+
+// wait for process
+void
+sys_wait_for_process(void)
+{
+
+  int pid;
+  argint(0, &pid);
+  wait_for_process(pid);
+
+}
