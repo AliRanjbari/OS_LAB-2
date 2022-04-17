@@ -105,6 +105,7 @@ extern int sys_write(void);
 extern int sys_uptime(void);
 extern int sys_find_next_prime_num(void);
 extern int sys_get_call_count(void);
+extern int sys_get_most_caller(void);
 
 
 
@@ -132,6 +133,7 @@ static int (*syscalls[])(void) = {
 [SYS_close]   sys_close,
 [SYS_find_next_prime_num]  sys_find_next_prime_num,
 [SYS_get_call_count] sys_get_call_count,
+[SYS_get_most_caller] sys_get_most_caller,
 
 };
 
@@ -142,7 +144,8 @@ syscall(void)
   struct proc *curproc = myproc();
 
   num = curproc->tf->eax;
-  curproc->sys_call_count[num]++;
+
+  curproc->sys_call_count[num]++;       // count system calls for each process
 
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     curproc->tf->eax = syscalls[num]();

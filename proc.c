@@ -561,3 +561,23 @@ get_call_count(int sys_call_num)
 {
   return myproc()->sys_call_count[sys_call_num];
 }
+
+// get most caller
+int 
+get_most_caller(int sys_call_num)
+{
+  int caller_id = -1;
+  int most_call = 0;
+
+  struct proc *p;
+
+  // acquire(&ptable.lock);
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    if(p->sys_call_count[sys_call_num] > most_call){
+      most_call = p->sys_call_count[sys_call_num];
+      caller_id = p->pid;
+    }
+  }
+
+  return caller_id;
+}

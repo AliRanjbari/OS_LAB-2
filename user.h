@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 int find_next_prime_num(int);
 int get_call_count(int);
+int get_most_caller(int);
 
 
 // ulib.c
