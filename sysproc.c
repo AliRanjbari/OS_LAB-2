@@ -99,3 +99,10 @@ sys_find_next_prime_num(void)
   cprintf("in kernel systemcall sys_find_next_prime_num() called for number %d\n", a);
   return find_next_prime_num(a);
 }
+
+// get parent proc id
+int
+sys_get_call_count(int sys_call_num)
+{
+  return get_call_count(sys_call_num);
+}

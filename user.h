@@ -24,6 +24,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int find_next_prime_num(int);
+int get_call_count(int);
 
 
 // ulib.c

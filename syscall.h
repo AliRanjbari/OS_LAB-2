@@ -21,4 +21,6 @@
 #define SYS_mkdir  20
 #define SYS_close  21
 #define SYS_find_next_prime_num 22
+#define SYS_get_call_count 23
+
 

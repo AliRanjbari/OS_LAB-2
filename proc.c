@@ -112,6 +112,10 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
+
+  for(int i=0; i<25; i++)
+    p->sys_call_count[i] = 0;
+
   return p;
 }
 
@@ -549,4 +553,12 @@ find_next_prime_num(int n)
       return i;
   }
   return 0;
+}
+
+// get call count
+int 
+get_call_count(int sys_call_num)
+{
+  struct proc *curproc = myproc();
+  return curproc->sys_call_count[sys_call_num];
 }

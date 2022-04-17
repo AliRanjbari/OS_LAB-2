@@ -121,6 +121,7 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 int             find_next_prime_num(int);
+int             get_call_count(int);
 
 
 // swtch.S
